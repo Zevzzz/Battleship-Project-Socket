@@ -24,20 +24,19 @@ public class SocketClient {
         OutputStreamWriter osw = new OutputStreamWriter(os);
         BufferedWriter bw = new BufferedWriter(osw);
 
-        System.out.println("Please answered the following question: ");
-        System.out.println("What is the subject code for Socket Programming?");
+        System.out.println("Connected! ");
         answer = input.nextLine();
-
+        
+        System.out.print("Zevzzz: ");
         sendMessage = answer;
         bw.write(sendMessage);
         bw.newLine();
         bw.flush();
-        System.out.println("Message sent to server: "+sendMessage);
 
         InputStream is = socket.getInputStream();
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(isr);
         receivedMessage = br.readLine();
-        System.out.println("Message received from server : " + receivedMessage);
+        System.out.println("Percy: " + receivedMessage);
     }
 }
